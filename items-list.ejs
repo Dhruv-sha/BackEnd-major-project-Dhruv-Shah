@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Item List</title>
+    <link href="/list-style.css" rel="stylesheet">
+    
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Item List</h1>
+
+
+
+
+        <a href="/items/new" class="add-item-btn">Add item</a>
+
+
+
+
+        <table>
+            <tr>
+                <th>name</th>
+                <th>topping</th>
+                <th>crust</th>
+                <th>price</th>
+            </tr>
+
+
+
+
+
+            <% items.forEach(item=> {%>
+                <tr>
+                    <td>
+                        <%= item.name %>
+                    </td>
+                    <td>
+                        <%= item.topping %>
+                    </td>
+                    <td>
+                        <%= item.crust %>
+                    </td>
+                    <td>
+                        <%= item.price %>
+                    </td>
+
+
+
+
+
+
+                    <td class="actions">
+                        <a href="/items/<%= item._id %>/edit">Edit</a>
+
+
+
+
+                        <form action="/items/<%= item._id %>?_method=DELETE" method="post">
+
+
+                            <button type="submit" class="delete-btn">DELETE</button>
+
+
+                        </form>
+
+
+
+
+                    </td>
+                </tr>
+                <%}) %>
+
+
+        </table>
+
+
+    </div>
+
+
+    </bod

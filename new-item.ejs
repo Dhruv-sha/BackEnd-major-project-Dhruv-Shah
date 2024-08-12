@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Item</title>
+    <link href="/form-style.css" rel="stylesheet">
+   
+</head>
+
+<body>
+    <div class="container">
+        <h1>Create New Item</h1>
+
+
+
+
+        <form action="/items" method="post">
+
+
+            <div>
+                <label for="name">name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+
+
+
+            <div>
+                <label for="topping">topping:</label>
+                <input type="text" id="topping" name="topping" required>
+            </div>
+
+
+            <div>
+                <label for="crust">crust:</label>
+                <input type="text" id="Crust" name="crust" required>
+            </div>
+
+            <div>
+                <label for="price">price:</label>
+                <input type="number" id="price" name="price" required>
+            </div>
+
+
+
+
+            <button type="submit"> Create Item</button>
+
+
+        </form>
+
+
+        <% if(errors){%>
+            <div class="error">
+                <h3>Error(s) : </h3>
+
+
+                <ul>
+                    <% errors.forEach(error=> {%>
+                        <li>
+                            <%= error.msg %>
+                        </li>
+                        <%}) %>
+
+
+                </ul>
+
+
+            </div>
+            <%}%>
+
+
+
+       
+    </div>
+
+</body>
+
+</html>
